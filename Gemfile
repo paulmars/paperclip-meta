@@ -1,5 +1,6 @@
 source "http://rubygems.org"
 
+gem 'json'
 gem "activerecord", ">= 3", :require => "active_record"
 gem "sqlite3-ruby", :require => "sqlite3"
 gem "paperclip", :require => "paperclip"
