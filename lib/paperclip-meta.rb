@@ -41,11 +41,14 @@ module Paperclip
     end
 
     def image_size(style = default_style)
+      style = style.to_s
       "#{width(style)}x#{height(style)}"
     end
 
     private
     def meta_read(style, item)
+      style = style.to_s
+      item = item.to_s
       if instance.respond_to?(:"#{name}_meta") && instance_read(:meta)
         if meta = JSON.parse(instance_read(:meta))
           meta.key?(style) ? meta[style][item] : nil
